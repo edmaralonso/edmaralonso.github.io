@@ -303,7 +303,8 @@ footer{text-align:center;padding:2rem;font-size:12px;color:var(--muted);border-t
 <script>
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+    if(e.isIntersecting){e.target.classList.add('visible')}
+    else{e.target.classList.remove('visible')}
   });
 },{threshold:0.1});
 document.querySelectorAll('.fade-section').forEach(s=>obs.observe(s));
